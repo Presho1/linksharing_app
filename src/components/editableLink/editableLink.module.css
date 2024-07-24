@@ -1,0 +1,132 @@
+.link_wrapper {
+    padding: 20px;
+    width: 100%;
+    background-color: var(--clr-white-pri);
+}
+
+.link_wrapper[data-copy='true'] {
+    position: absolute;
+    opacity: 0.8;
+    background-color: var(--clr-white-pri);
+    z-index: 5;
+}
+
+.link_wrapper[data-copy='true'] > * {
+    opacity: 0.8;
+}
+
+.link_head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font: var(--font-head-sm);
+}
+
+.link_head button:last-child {
+    margin-left: auto;
+    font: var(--font-body-md);
+    color: var(--clr-light-grey);
+    background-color: transparent;
+    border: none;
+}
+
+.link_inputs {
+    display: grid;
+    row-gap: 12px;
+    margin-top: 12px;
+}
+
+.drag_btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    padding-right: 8px;
+    height: 100%;
+    cursor: grab;
+}
+
+.link_wrapper[data-copy='true'] .drag_btn {
+    cursor: grabbing;
+}
+
+.input > svg {
+    position: absolute;
+    right: 16px;
+    bottom: 18px;
+    transform-origin: center;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-left: 44px;
+    font: var(--font-body-md);
+    color: var(--clr-dark-grey);
+    height: 48px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.input,
+.dropdown[aria-hidden='false'] {
+    border: 1px solid var(--clr-border);
+    border-radius: var(--border-radius);
+}
+
+.input:is(:hover, :focus) {
+    border: 1px solid var(--clr-purple-pri);
+    box-shadow: 0 0 32px var(--clr-purple-shadow);
+}
+
+.dropdown {
+    position: absolute;
+    width: 100%;
+    top: 86px;
+    height: 0;
+    overflow: hidden;
+    padding-inline: 16px;
+    background-color: var(--clr-white-pri);
+    transition: height 0.3s ease;
+    z-index: 2;
+}
+
+.dropdown[aria-hidden='false'] {
+    height: 690px;
+    box-shadow: 0 0 32px #0000001a;
+}
+
+.label:has(.dropdown[aria-hidden='false']) .input > svg {
+    rotate: 180deg;
+}
+
+.option {
+    font: var(--font-body-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-block: 12px;
+    cursor: pointer;
+}
+
+.option,
+.option path {
+    transition: all 0.3s ease;
+}
+
+.option:not(:last-child) {
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.option:is(:hover, :focus) {
+    color: var(--clr-purple-pri);
+}
+
+.option:not(:nth-of-type(8)):is(:hover, :focus) path {
+    fill: var(--clr-purple-pri);
+}
+
+.option:nth-of-type(8):is(:hover, :focus) path:first-child {
+    fill: var(--clr-purple-pri);
+}

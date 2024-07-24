@@ -1,0 +1,85 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 24px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--clr-white-pri);
+}
+
+.header nav {
+    display: flex;
+}
+
+.div{
+    padding-top: 24px;
+}
+.nav_btn,
+.preview_btn button {
+    font: var(--font-head-sm);
+    color: var(--clr-light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 42px;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    transition: 0.2s ease;
+}
+
+.nav_btn {
+    min-width: 74px;
+    border: none;
+}
+
+.nav_btn span,
+.nav_btn path {
+    transition: all 0.2s ease;
+}
+
+.nav_btn:is(:hover, :focus) span {
+    color: var(--clr-purple-pri);
+}
+
+.nav_btn:is(:hover, :focus) path {
+    fill: var(--clr-purple-pri);
+}
+
+.preview_btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    color: var(--clr-purple-pri);
+    border: 1px solid var(--clr-purple-pri);
+}
+
+@media screen and (max-width: 500px) {
+    .nav_btn span,
+    .preview_btn button span {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    .nav_btn,
+    .preview_btn button {
+        height: 46px;
+        padding-inline: 27px;
+    }
+
+    .preview_btn button svg {
+        display: none;
+    }
+}
+
+.nav_btn[data-active="true"] {
+    color: var(--clr-purple-pri);
+    background-color: var(--clr-purple-ter);
+}
+
+.nav_btn[data-active="true"] path {
+    fill: var(--clr-purple-pri);
+}
