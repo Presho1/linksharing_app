@@ -21,8 +21,9 @@ export default function Header({
         
         <header className={styles.header}>
 
-            <DevlinksLogoLg />
-
+            <Link to='/login'>
+                <DevlinksLogoLg />
+            </Link>
             <nav>
 
                 <button
