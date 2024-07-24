@@ -58,7 +58,9 @@ export default function Signup() {
     return (
         <main className={styles.main}>
 
-            <DevlinksLogoLg />
+            <Link to='/'>
+                <DevlinksLogoLg />
+            </Link>
 
             <div className={styles.header}>
 

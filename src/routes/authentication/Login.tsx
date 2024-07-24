@@ -47,7 +47,9 @@ export default function Login() {
        
         <main className={styles.main}>
 
-            <DevlinksLogoLg />
+            <Link to='/'>
+                <DevlinksLogoLg />
+            </Link>
             
             <div className={styles.header}>
 
