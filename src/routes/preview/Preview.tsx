@@ -18,14 +18,12 @@ export default function Preview() {
 
     const copyLink = () => {
         if (user) {
-            const baseUrl = import.meta.env.VITE_ENVIRONMENT === 'production' ?
-                'https://link-sharing-app-f3f11.web.app/' :
-                'http://localhost:5173/'
-
+            const baseUrl = 'http://localhost:5173/'; 
+    
             navigator.clipboard.writeText(baseUrl + slug)
-
+    
             setLinkCopied(true)
-
+    
             setTimeout(() => {
                 setLinkCopied(false)
             }, 3500)
