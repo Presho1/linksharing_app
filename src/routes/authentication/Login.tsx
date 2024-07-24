@@ -5,7 +5,7 @@ import Button from "../../components/button/Button"
 import EmailIcon from "../../assets/EmailIcon"
 import LockIcon from "../../assets/LockIcon"
 import styles from './authentication.module.css'
-import useForm from "../../hooks/useForm"
+// import useForm from "../../hooks/useForm"
 import { AuthContext } from "../../contexts/AuthContext"
 
 export default function Login() {
@@ -18,13 +18,13 @@ export default function Login() {
     const emailRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
 
-    const {
-        validateInput,
-        validateForm
-    } = useForm([
-        emailRef,
-        passwordRef
-    ])
+    // const {
+    //     validateInput,
+    //     validateForm
+    // } = useForm([
+    //     emailRef,
+    //     passwordRef
+    // ])
 
     const navigate = useNavigate()
 
@@ -80,7 +80,7 @@ export default function Login() {
                         name="email"
                         id="email"
                         ref={emailRef}
-                        onChange={validateInput}
+                        // onChange={validateInput}
                         placeholder="e.g. alex@email.com"
                         required
                     />
@@ -100,7 +100,7 @@ export default function Login() {
                         name="password"
                         id="password"
                         ref={passwordRef}
-                        onChange={validateInput}
+                        // onChange={validateInput}
                         placeholder="Enter your password"
                         required
                     />
@@ -116,7 +116,7 @@ export default function Login() {
                 </p>}
 
                 <Button
-                    onClick={validateForm}
+                    // onClick={validateForm}
                 >
                     {loginError ? 'Something went wrong' : 'Login'}
                 </Button>

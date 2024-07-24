@@ -5,7 +5,7 @@ import Button from "../../components/button/Button"
 import EmailIcon from "../../assets/EmailIcon"
 import LockIcon from "../../assets/LockIcon"
 import styles from './authentication.module.css'
-import useForm from "../../hooks/useForm"
+// import useForm from "../../hooks/useForm"
 import { AuthContext } from "../../contexts/AuthContext"
 
 export default function Signup() {
@@ -20,14 +20,18 @@ export default function Signup() {
     const passwordRef = useRef<HTMLInputElement>(null)
     const passwordConfirmRef = useRef<HTMLInputElement>(null)
 
-    const {
-        validateInput,
-        validateForm,
-    } = useForm([
-        emailRef,
-        passwordRef,
-        passwordConfirmRef
-    ])
+    // const {
+    //     validateInput,
+    //     // validateForm,
+    // } 
+    // = 
+    // useForm(
+    //     [
+    //     emailRef,
+    //     passwordRef,
+    //     passwordConfirmRef
+    // ]
+    // )
 
     const navigate = useNavigate()
 
@@ -88,7 +92,7 @@ export default function Signup() {
                         id="email"
                         ref={emailRef}
                         placeholder="e.g. alex@email.com"
-                        onChange={validateInput}
+                        // onChange={validateInput}
                         required
                     />
                     
@@ -108,7 +112,7 @@ export default function Signup() {
                         id="create-password"
                         ref={passwordRef}
                         placeholder="At least 8 characters"
-                        onChange={validateInput}
+                        // onChange={validateInput}
                         required
                     />
                     
@@ -128,7 +132,7 @@ export default function Signup() {
                         id="confirm-password"
                         ref={passwordConfirmRef}
                         placeholder="At least 8 characters"
-                        onChange={validateInput}
+                        // onChange={validateInput}
                         required
                     />
                     
@@ -147,7 +151,7 @@ export default function Signup() {
                 </p>}
 
                 <Button
-                    onClick={validateForm}
+                    // onClick={validateForm}
                 >
                     {signupError ? 'Something went wrong' : 'Create new account'}
                 </Button>
